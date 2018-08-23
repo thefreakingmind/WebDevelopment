@@ -1,0 +1,15 @@
+<html>
+  <head>
+	<title>
+	  Welcome
+	  </title>
+  </head>
+  <body>
+	{% for obj in object %}
+	<h1>{{ obj.name }}</h1>
+	<img src="{{ obj.img.url }}" width=60 height=60></img>
+	{{ obj.description }}
+	{{ obj.price }}
+	{% endfor %}
+  </body>
+</html>
