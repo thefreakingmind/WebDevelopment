@@ -17,12 +17,13 @@ from django.contrib import admin
 from django.urls import path
 from django.conf import settings
 from django.conf.urls.static import static
-from Products.views import index, upload
+from Products.views import index, upload, detailed_view
 
 urlpatterns = [
     path('admin/', admin.site.urls),
     path( '', index),
     path('upload', upload, name='upload'),
+    path('detail/<int:pk>/', detailed_view, name='detailed_view')
 ]+ static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
 
 admin.site.site_header = 'SalProducts'
